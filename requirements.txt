@@ -1,0 +1,5 @@
+langchain==0.1.16
+pypdf==4.2.0
+streamlit==1.33.0
+python-magic==0.4.27
+langchain-openai==0.1.3
