@@ -9,6 +9,7 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import ChatOpenAI
 from pydantic.v1 import BaseModel
 from streamlit.runtime.uploaded_file_manager import UploadedFile
+import streamlit as st
 
 
 class Invoice(BaseModel):
@@ -28,7 +29,8 @@ class Invoice(BaseModel):
 
 class ExtracterAgent:
 
-    output_parser: PydanticOutputParser = PydanticOutputParser(pydantic_object=Invoice)
+    output_parser: PydanticOutputParser = PydanticOutputParser(
+        pydantic_object=Invoice)
 
     def parse_pdf_input(self, uploaded_files: UploadedFile):
         parded_pdf = []
@@ -50,7 +52,8 @@ You tasked to extracted data from given tax invoice.
         return prompt
 
     def create_chain(self):
-        llm = ChatOpenAI(model="gpt-3.5-turbo")
+        llm = ChatOpenAI(model="gpt-3.5-turbo",
+                         api_key=st.session_state.get("openai_api_key"))
         prompt = self.create_prompt()
         chain = (
             {"pdf_input": RunnablePassthrough()}

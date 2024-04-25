@@ -5,6 +5,9 @@ from utils import format_output
 
 st.title("🤖Invoice extractor Bot")
 
+if "openai_api_key" not in st.session_state:
+    st.session_state["openai_api_key"] = None
+
 if st.session_state.openai_api_key is None:
     st.warning("Please enter your OpenAI API key on main page!!!")
 else:
