@@ -22,6 +22,10 @@ Acknowledging the widespread demand for data extraction solutions utilizing LLM,
 - Utilizes `function calling` with LLM to enhance accuracy
 - Offers two output options: `JSON` and `CSV`
 
+### 🎬 Demo
+
+https://github.com/Ja-yy/Invoice-excreter-bot-llm/assets/114324220/8d6be027-80c7-4a55-8b40-e3621066f4ac
+
 ### 🔜 Future Development and Features
 
 In upcoming iterations, I aim to incorporate the ability to extract data from Excel and Word files, expanding the application's versatility and utility.
